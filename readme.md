@@ -12,7 +12,8 @@ This repository contains the solutions for the QA Engineer assignment provided b
 The test plan includes various types of tests for end-to-end testing and its located here: **<<Assignment_Test Plan Document>>**
 
 **Automated Test Cases:**
-The automated test cases are written using Java, Selenium, and Cucumber BDD framework. The TestRunner class is used to execute the test cases.
+The automated test cases are written using Java, Selenium, and Cucumber BDD framework. 
+Use "**mvn test -P assignment-test**" to execute the test
 
 **Contributor:**
 Abishek Raja N
