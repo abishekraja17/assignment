@@ -58,7 +58,7 @@ Given the user is on the signup page
     Then the signup button should be disabled
 
   Scenario: Successful signup
-When the user enters a valid email "user12@example.com"
+When the user enters a valid email "user11@example.com"
 And the user enters a valid password "Password1!"
 And the user enters the same password in the confirm password field "Password1!"
 And the user clicks the "signup" button

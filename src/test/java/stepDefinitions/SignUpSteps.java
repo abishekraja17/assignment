@@ -10,6 +10,7 @@ import pageObjects.xaltsocnportal.SignInPage;
 import pageObjects.xaltsocnportal.SignUpPage;
 import utils.BaseTest;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class SignUpSteps extends BaseTest {
@@ -17,8 +18,8 @@ public class SignUpSteps extends BaseTest {
     SignUpPage signUpPage = new SignUpPage(driver);
     SignInPage signInPage = new SignInPage(driver);
     @Given("the user is on the signup page")
-    public void the_user_is_on_the_signup_page() {
-        driver.get("https://xaltsocnportal.web.app/");
+    public void the_user_is_on_the_signup_page() throws IOException {
+        driver.get(getTestURL());
         homePage.signInButton();
     }
     @When("the user enters an invalid email {string}")
@@ -87,7 +88,6 @@ public class SignUpSteps extends BaseTest {
             Alert alert = wait.until(ExpectedConditions.alertIsPresent());
             driver.switchTo().alert();
             String alertText = alert.getText();
-            System.out.println("Alert Text: " + alertText);
             Assert.assertEquals(alertText, expAlert);
             alert.accept();
     }

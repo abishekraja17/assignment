@@ -7,13 +7,15 @@ import pageObjects.xaltsocnportal.SignInPage;
 import pageObjects.xaltsocnportal.SignUpPage;
 import utils.BaseTest;
 
+import java.io.IOException;
+
 public class SignOutSteps extends BaseTest {
     HomePage homePage = new HomePage(driver);
     SignUpPage signUpPage = new SignUpPage(driver);
     SignInPage signInPage = new SignInPage(driver);
     @Given("the user is signedIn using the email {string} and password {string}")
-    public void the_user_is_signed_in(String emailId, String password) {
-        driver.get("https://xaltsocnportal.web.app/");
+    public void the_user_is_signed_in(String emailId, String password) throws IOException {
+        driver.get(getTestURL());
         homePage.signInButton();
         signUpPage.clickSignIn();
         signInPage.enterEmail(emailId);

@@ -7,13 +7,15 @@ import pageObjects.xaltsocnportal.SignInPage;
 import pageObjects.xaltsocnportal.SignUpPage;
 import utils.BaseTest;
 
+import java.io.IOException;
+
 public class SignInSteps extends BaseTest {
     HomePage homePage = new HomePage(driver);
     SignUpPage signUpPage = new SignUpPage(driver);
     SignInPage signInPage = new SignInPage(driver);
     @Given("the user is on the signIn page")
-    public void the_user_is_on_the_sign_in_page() {
-        driver.get("https://xaltsocnportal.web.app/");
+    public void the_user_is_on_the_sign_in_page() throws IOException {
+        driver.get(getTestURL());
         homePage.signInButton();
         signUpPage.clickSignIn();
     }
